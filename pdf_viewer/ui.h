@@ -93,7 +93,7 @@ protected:
 		}
 		QSortFilterProxyModel* sort_filter_proxy_model = dynamic_cast<QSortFilterProxyModel*>(proxy_model);
 		if (proxy_model) {
-			proxy_model->setRecursiveFilteringEnabled(true);
+			//proxy_model->setRecursiveFilteringEnabled(true);
 		}
 
 		layout->addWidget(line_edit);

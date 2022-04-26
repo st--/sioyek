@@ -2798,7 +2798,8 @@ void MainWidget::execute_command(std::wstring command) {
 
     qtext.arg(qfile_path);
 
-    QStringList command_parts = qtext.split(QRegExp("\\s+"), QString::SkipEmptyParts);
+    QStringList command_parts = qtext.split(QRegExp("\\s+"));
+    command_parts.removeAll(QString(""));
     if (command_parts.size() > 0) {
         QString command_name = command_parts[0];
         QStringList command_args;

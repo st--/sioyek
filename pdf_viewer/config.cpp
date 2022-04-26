@@ -154,7 +154,8 @@ bool ensure_between_0_and_1(const QStringList& parts) {
 
 bool color_3_validator(const std::wstring& str) {
 	QString qstr = QString::fromStdWString(str);
-	auto parts = qstr.split(' ', Qt::SplitBehaviorFlags::SkipEmptyParts);
+	auto parts = qstr.split(' ');
+    parts.removeAll(QString(""));
 	if (parts.size() != 3) {
 		std::wcout << L"Error: required 3 values for color, but got " << parts.size() << "\n";
 		return false;
@@ -167,7 +168,8 @@ bool color_3_validator(const std::wstring& str) {
 
 bool color_4_validator(const std::wstring& str) {
 	QString qstr = QString::fromStdWString(str);
-	auto parts = qstr.split(' ', Qt::SplitBehaviorFlags::SkipEmptyParts);
+	auto parts = qstr.split(' ');
+    parts.removeAll(QString(""));
 	if (parts.size() != 4) {
 		std::wcout << L"Error: required 4 values for color, but got " << parts.size() << "\n";
 		return false;
@@ -180,7 +182,8 @@ bool color_4_validator(const std::wstring& str) {
 
 bool bool_validator(const std::wstring& str) {
 	QString qstr = QString::fromStdWString(str);
-	auto parts = qstr.split(' ', Qt::SplitBehaviorFlags::SkipEmptyParts);
+	auto parts = qstr.split(' ');
+    parts.removeAll(QString(""));
 	int is_correct = true;
 	std::wstring msg = L"Bool values should be either 0 or 1, but got ";
 	if (parts.size() != 1) {
